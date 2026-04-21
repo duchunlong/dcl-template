@@ -1,10 +1,9 @@
 \documentclass[11pt]{article}
 
-
 \setlength{\parindent}{0pt}
 \usepackage{xltxtra}
 \usepackage{hyperref}
-\hypersetup{hidelinks}
+\hypersetup{hidelinks, colorlinks=true, linkcolor=CVBlue, urlcolor=CVBlue}
 \usepackage{url}
 \urlstyle{tt}
 \usepackage{xcolor}
@@ -16,141 +15,118 @@
 \usepackage{fontspec}
 \usepackage{xeCJK}
 \usepackage{enumitem}
-\CJKsetecglue{} %% 取消中文与数字之间的间隙
+\CJKsetecglue{}
 
-
-%% 主文档字体设置
+% 英文主字体
 \setmainfont[
     Path = fonts/Main/,
     Extension = .otf,
-    BoldFont = texgyretermes-bold.otf, % 加粗字体
-]{texgyretermes-regular.otf} % 正文字体
+    BoldFont = texgyretermes-bold.otf,
+]{texgyretermes-regular.otf}
 
-% 中文字体设置
+% 中文字体
 \setCJKmainfont[
     Path = fonts/hansans/,
     Extension = .ttf,
-    BoldFont = NotoSansSC-Bold.ttf, % 加粗字体
-]{NotoSansSC-Regular.otf} % 正文字体
-
+    BoldFont = NotoSansSC-Bold.ttf,
+]{NotoSansSC-Regular.otf}
 
 \usepackage{relsize}
 \usepackage{xspace}
+\usepackage{fontawesome}
 
-% 使用 fontawesome（部分图标）
-\usepackage{fontawesome} 
+\usepackage[a4paper,
+    left=1.2cm, right=1.2cm,
+    top=1.5cm, bottom=1cm, nohead]{geometry}
 
-% A4纸，上下左右边距
-\usepackage[
-    a4paper,
-    left=1.2cm,
-    right=1.2cm,
-    top=1.5cm,
-    bottom=1cm,
-    nohead
-]{geometry}
-
-\renewcommand{\baselinestretch}{1.5} % 行间距设为1.5
+\renewcommand{\baselinestretch}{1.4} % 更舒适行间距
 
 \usepackage{titlesec}
-\usepackage{enumitem}
-\setlist{noitemsep} % 取消列表项间的额外间距
-%\setlist{nosep} % 取消所有垂直间距
-\setlist[itemize]{topsep=0.25em, leftmargin=*}
-\setlist[enumerate]{topsep=0.25em, leftmargin=*}
+\setlist{noitemsep}
+\setlist[itemize]{topsep=0.3em, leftmargin=*, itemsep=0.15em}
 
-% --- 用于控制【不同项目之间】的垂直距离 ---
+% 项目间距命令
 \newlength{\interProjectSpacing}
-\setlength{\interProjectSpacing}{0.9em} % <--- 在此调整项目之间的距离
+\setlength{\interProjectSpacing}{0.8em}
 \newcommand{\projectsep}{\vspace{\interProjectSpacing}}
 
-% --- 用于控制【项目标题】与下方【项目描述】的距离 ---
 \newlength{\intraProjectTitleSep}
-\setlength{\intraProjectTitleSep}{0.4em} % <--- 在此调整标题和描述的距离
+\setlength{\intraProjectTitleSep}{0.4em}
 \newcommand{\titlebreak}{\\[\intraProjectTitleSep]}
 
-% --- 用于控制【项目描述】与下方【要点列表】的距离 ---
 \newlength{\intraProjectListTopSep}
-\setlength{\intraProjectListTopSep}{0.2em} % <--- 在此调整描述和列表的距离
+\setlength{\intraProjectListTopSep}{0.2em}
 
-% =======================================================================
-
-
-\titleformat{\section}         % 定制 \section 命令 
-{\large\bfseries\raggedright} % 将 section 标题设置为大号、粗体且左对齐
-{}{0em}                      % 可用于为所有 section 添加前缀（如“章节...”）
-{}                           % 可用于在标题前插入代码
-[{\color{CVBlue}\titlerule}]  % 在标题后插入一条横线
-\titlespacing*{\section}{0cm}{*1.6}{*1.2}
-
-
+% 章节样式优化
+\titleformat{\section}{\large\bfseries\raggedright}{}{0em}{}[{\color{CVBlue}\titlerule}]
+\titlespacing*{\section}{0cm}{1.4em}{0.9em}
 
 \begin{document}
 \pagenumbering{gobble}
 
-%%%% 利用tikz来定位照片
+% 头像
 \begin{tikzpicture}[remember picture, overlay] 
-    \node[anchor = north east] at ($(current page.north east)+(-2cm,-1.2cm)$) {\includegraphics[height=3cm]{avatar.jpg}};
-  \end{tikzpicture}%
-  %%%% 利用tikz来定位学校Logo，这里只在第一页显示
-  \begin{tikzpicture}[remember picture, overlay] 
-    \node[anchor = north west] at ($(current page.north west)+(0.5cm,+1.0cm)$) {\includegraphics[height=6cm]{zju.png}};
-  \end{tikzpicture}%
-\centerline{\LARGE\bfseries{杜春龙}} 
+\node[anchor=north east] at ($(current page.north east)+(-2cm,-1.2cm)$) {\includegraphics[height=3cm]{avatar.jpg}};
+\end{tikzpicture}
 
-\centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}}} 
+% Logo
+\begin{tikzpicture}[remember picture, overlay] 
+\node[anchor=north west] at ($(current page.north west)+(0.5cm,1.0cm)$) {\includegraphics[height=2.8cm]{zju.png}};
+\end{tikzpicture}
 
-% \centerline{\normalsize{\faGithubSquare\ \href{https://github.com/maksymilan}{https://github.com/maksymilan} \quad \faRssSquare\ \href{https://maksymilan.github.io/}{https://maksymilan.github.io}}} 
-    
+\centerline{\LARGE\bfseries 杜春龙}
+\vspace{0.3em}
+\centerline{\normalsize \faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}}
+
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}
+\textbf{哈尔滨师范大学} \hfill \textbf{测绘工程 | 硕士} \hfill 2023.09 -- 至今 \\
+GPA：3.78/4.0（专业排名前15\%）\\
+研究方向：遥感影像处理、遥感影像智能解译方法研究\\
+毕业论文：基于几何上下文与频域融合的滑坡识别深度学习模型研究
 
-% 硕士教育背景
-\textbf{哈尔滨师范大学} \hfill \textbf{测绘工程|硕士} \hfill 2023.09 -- 至今 \\[0.5em]
-GPA：3.78/4.0（专业排名：前15\%）\\[0.4em]
-研究方向：遥感影像处理、图像处理。主要研究内容为遥感影像智能解译方法研究\\[0.4em]
-毕业论文：基于几何上下文与频域融合的滑坡识别深度学习模型研究\\[1em]
+\vspace{0.8em}
+\textbf{长春工业大学} \hfill \textbf{软件工程 | 学士} \hfill 2019.09 -- 2023.06 \\
+GPA：3.46/4.0（专业前10\%）\\
+主修课程：程序设计基础、大数据处理技术、数据分析与可视化、面向对象程序设计等
 
-% 本科教育背景
-\textbf{长春工业大学} \hfill \textbf{软件工程|学士} \hfill 2019.09 -- 2023.06 \\[0.5em]
-GPA：3.46/4.0（专业前10\%）\\[0.4em]
-主修课程：程序设计基础（C语言）、高等数学、大数据处理技术（Python）、数据采集与预处理、数据分析与可视化、面向对象程序设计（Java）等
+\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 学术成果}
+\textbf{期刊论文} \titlebreak
+Du, Chunlong, Shaoqun Qi, Luhe Wan, et al. (2026). GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery. \textit{Remote Sensing}, https://doi.org/10.3390/rs18040635 (SCI 2区, IF=4.1, JCR Q1) \textbf{(第一作者)} \titlebreak
+Chen, Y., Qi, S., Wan, L., Du, C., et al. (2025). HyM3S: Integrating Multiscale Spatial–Spectral Features With Sequence Modeling for Hyperspectral Classification. \textit{IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing} (SCI 2区, IF=5.3, JCR Q1) \textbf{(第四作者，学生二作)}
 
-\section {\makebox [\widthof {\faUsers}][c]{\color {CVBlue}\faUsers}\ 学术成果}
-% --- 第一个项目：期刊论文 ---\textbf {期刊论文} \titlebreak 
-Du, Chunlong, Shaoqun Qi, Luhe Wan, et al. (2026). "GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery" 《Remote Sensing》 https://doi.org/10.3390/rs18040635 (SCI 2 区，IF=4.1，JCRQ1)，(第一作者) \titlebreak
-Chen, Y., Qi, S., Wan, L., Du, C., et al. (2025). HyM3S: Integrating Multiscale Spatial–Spectral Features With Sequence Modeling for Hyperspectral Classification. 《IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing》, (SCI 2 区，IF=5.3，JCRQ1)，(第四作者，学生第二作者)
 \projectsep
-% --- 第二个项目：专利申请 ---\textbf {专利申请} \titlebreak
-齐少群，杜春龙.“融合几何上下文与频域多源特征的滑坡检测方法”（中国发明专利，审核中）
+\textbf{专利申请} \titlebreak
+齐少群, 杜春龙. 融合几何上下文与频域多源特征的滑坡检测方法（中国发明专利，审核中）
 
-\section {\makebox [\widthof {\faUsers}][c]{\color {CVBlue}\faUsers}\ 科研项目}
-% --- 第一个项目：黑龙江省自然科学基金项目 ---\textbf {黑龙江省自然科学基金项目} \hfill 核心成员 \hfill 2025.12.1 -- 2028.12.1 \titlebreak
-项目名称：“融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法” \titlebreak
-我的职责：主要负责项目的申报与立项、模型设计与优化
+\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研项目}
+\textbf{黑龙江省自然科学基金项目} \hfill 核心成员 \hfill 2025.12 -- 2028.12 \titlebreak
+项目名称：融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法 \titlebreak
+职责：项目申报与立项、模型设计与优化
+
 \projectsep
-% --- 第二个项目：基于启发式算法的智能装载系统 ---\textbf {基于启发式算法的智能装载系统} \hfill 开发成员 \hfill 2022.08.1 -- 2022.12.30 \titlebreak
-项目描述：系统确保空运实现快速反应以及远程机动，实现大型设备运输等任务而开发，系统主要功能包括生成转场方案、转场方案管理、角色管理、装载方案、物品管理、用户管理、部门管理场地管理、舱箱管理等\titlebreak
-我的职责：负责软件前期需求分析和数据库设计工作、核心功能开发的编码
+\textbf{基于启发式算法的智能装载系统} \hfill 开发成员 \hfill 2022.08 -- 2022.12 \titlebreak
+项目描述：系统用于空运快速反应、远程机动与大型设备运输，支持转场方案、装载方案、用户/部门/舱箱管理等 \titlebreak
+职责：需求分析、数据库设计、核心功能编码开发
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研技能}
-
-\begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{学术写作与工具}：熟练使用 LaTeX 进行学术论文排版，掌握 EndNote、Zotero 等文献管理工具，熟悉 SCI 期刊投稿流程与审稿意见回复规范，具备中英文科技论文写作能力
-    \item \textbf{深度学习与计算机视觉}：熟悉 PyTorch、TensorFlow 框架，熟练搭建 U-Net 等深度学习模型，熟悉模型调优策略，具备遥感影像滑坡分割模型建模能力
-    \item \textbf{编程开发与工具}：熟悉 Python, C, Java等语言、具备一定的开发编程能力
-    \item \textbf{软件工具与科研AI}：熟练使用 IDEA、PyCharm、VS Code 等开发工具，能够使用各类科研AI辅助工具、大语言模型提升科研与开发效率
-\end{itemize
+\begin{itemize}[nosep]
+    \item \textbf{学术写作与工具}：熟练使用 LaTeX 排版，掌握 EndNote、Zotero 文献管理，熟悉 SCI 期刊流程，具备中英文学术写作能力
+    \item \textbf{深度学习与视觉}：熟悉 PyTorch、TensorFlow，可搭建 U-Net 等分割模型，掌握模型调优，具备遥感影像滑坡分割建模能力
+    \item \textbf{编程开发}：熟练使用 Python、C、Java 等语言，具备完整项目开发与工程实现能力
+    \item \textbf{软件与科研AI}：熟练使用 IDEA、PyCharm、VS Code，能使用科研AI工具与大模型提升研究效率
+\end{itemize}
 
 \section{\makebox[\widthof{\faTrophy}][c]{\color{CVBlue}\faTrophy}\ 荣誉奖项}
 \begin{itemize}[nosep]
-    \item \textbf{学业奖学金}：学业二等奖学金（2020.03、2021.03）；学业三等奖学金（2020.09、2020.12、2021.09、2022.09）
-    \item \textbf{荣誉称号}：文明大学生（2021.04）；学风建设先进个人（2020.12）
-    \item \textbf{竞赛与科创}：“外研社·国才杯”全国英语写作大赛校级二等奖（2020.12）；大学生创新创业训练计划项目立项（2022.05）
-    \item \textbf{英语能力}：大学英语四级（CET-4）、大学英语六级（CET-6）
+    \item \textbf{学业奖学金}：二等奖（2020.03、2021.03）；三等奖（2020.09、2020.12、2021.09、2022.09）
+    \item \textbf{荣誉称号}：文明大学生（2021.04）、学风建设先进个人（2020.12）
+    \item \textbf{竞赛与科创}：“外研社·国才杯”英语写作大赛校级二等奖（2020.12）；大创项目立项（2022.05）
+    \item \textbf{英语能力}：CET-4、CET-6
 \end{itemize}
-    
+
 \section{\makebox[\widthof{\faInfo}][c]{\color{CVBlue}\faInfo}\ 自我评价}
 \begin{itemize}[parsep=0.5ex]
-    \item 具备图像处理与深度学习理论基础，科研态度严谨，善于独立思考与学术创新，具备完整论文撰写与项目研究能力，做事踏实耐心，拥有良好学术素养与读博深造潜力，愿意深耕科研领域
+    \item 具备扎实的遥感图像处理与深度学习基础，科研态度严谨，动手能力强，拥有完整论文写作与项目研究经验，学习能力突出，学术素养良好，立志深耕科研，具备优秀的读博潜力与长期研究能力。
 \end{itemize}
+
 \end{document}
