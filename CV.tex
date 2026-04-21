@@ -1,5 +1,4 @@
-\documentclass[11pt]{article}
-
+\documentclass[10pt]{article} % 字体从11pt改为10pt
 
 \setlength{\parindent}{0pt}
 \usepackage{xltxtra}
@@ -16,125 +15,109 @@
 \usepackage{fontspec}
 \usepackage{xeCJK}
 \usepackage{enumitem}
-\CJKsetecglue{} %% 取消中文与数字之间的间隙
-
+\CJKsetecglue{}
 
 %% 主文档字体设置
 \setmainfont[
     Path = fonts/Main/,
     Extension = .otf,
-    BoldFont = texgyretermes-bold.otf, % 加粗字体
-]{texgyretermes-regular.otf} % 正文字体
+    BoldFont = texgyretermes-bold.otf,
+]{texgyretermes-regular.otf}
 
 % 中文字体设置
 \setCJKmainfont[
     Path = fonts/hansans/,
     Extension = .ttf,
-    BoldFont = NotoSansSC-Bold.ttf, % 加粗字体
-]{NotoSansSC-Regular.otf} % 正文字体
-
+    BoldFont = NotoSansSC-Bold.ttf,
+]{NotoSansSC-Regular.otf}
 
 \usepackage{relsize}
 \usepackage{xspace}
+\usepackage{fontawesome}
 
-% 使用 fontawesome（部分图标）
-\usepackage{fontawesome} 
-
-% A4纸，上下左右边距
+% 页面边距稍微缩小
 \usepackage[
     a4paper,
-    left=1.2cm,
-    right=1.2cm,
-    top=1.5cm,
-    bottom=1cm,
+    left=1.0cm,
+    right=1.0cm,
+    top=1.2cm,
+    bottom=0.8cm,
     nohead
 ]{geometry}
 
-\renewcommand{\baselinestretch}{1.5} % 行间距设为1.5
+\renewcommand{\baselinestretch}{1.3} % 行间距从1.5改为1.3
 
 \usepackage{titlesec}
 \usepackage{enumitem}
-\setlist{noitemsep} % 取消列表项间的额外间距
-%\setlist{nosep} % 取消所有垂直间距
-\setlist[itemize]{topsep=0.25em, leftmargin=*}
-\setlist[enumerate]{topsep=0.25em, leftmargin=*}
+\setlist{noitemsep}
+\setlist[itemize]{topsep=0.15em, leftmargin=*} % 列表顶部间距缩小
+\setlist[enumerate]{topsep=0.15em, leftmargin=*}
 
-% --- 用于控制【不同项目之间】的垂直距离 ---
+% --- 所有自定义间距同步缩小 ---
 \newlength{\interProjectSpacing}
-\setlength{\interProjectSpacing}{0.9em} % <--- 在此调整项目之间的距离
+\setlength{\interProjectSpacing}{0.6em} % 项目间距从0.9em改为0.6em
 \newcommand{\projectsep}{\vspace{\interProjectSpacing}}
 
-% --- 用于控制【项目标题】与下方【项目描述】的距离 ---
 \newlength{\intraProjectTitleSep}
-\setlength{\intraProjectTitleSep}{0.4em} % <--- 在此调整标题和描述的距离
+\setlength{\intraProjectTitleSep}{0.25em} % 标题与描述间距从0.4em改为0.25em
 \newcommand{\titlebreak}{\\[\intraProjectTitleSep]}
 
-% --- 用于控制【项目描述】与下方【要点列表】的距离 ---
 \newlength{\intraProjectListTopSep}
-\setlength{\intraProjectListTopSep}{0.2em} % <--- 在此调整描述和列表的距离
+\setlength{\intraProjectListTopSep}{0.1em} % 描述与列表间距从0.2em改为0.1em
 
 % =======================================================================
 
-
-\titleformat{\section}         % 定制 \section 命令 
-{\large\bfseries\raggedright} % 将 section 标题设置为大号、粗体且左对齐
-{}{0em}                      % 可用于为所有 section 添加前缀（如“章节...”）
-{}                           % 可用于在标题前插入代码
-[{\color{CVBlue}\titlerule}]  % 在标题后插入一条横线
-\titlespacing*{\section}{0cm}{*1.6}{*1.2}
-
-
+% 章节上下间距缩小
+\titleformat{\section}
+{\large\bfseries\raggedright}
+{}{0em}
+{}
+[{\color{CVBlue}\titlerule}]
+\titlespacing*{\section}{0cm}{*1.0}{*0.7} % 章节前后间距从*1.6/*1.2改为*1.0/*0.7
 
 \begin{document}
 \pagenumbering{gobble}
 
-%%%% 利用tikz来定位照片
+%%%% 照片和Logo稍微缩小一点
 \begin{tikzpicture}[remember picture, overlay] 
-    \node[anchor = north east] at ($(current page.north east)+(-2cm,-1.2cm)$) {\includegraphics[height=3cm]{avatar.jpg}};
+    \node[anchor = north east] at ($(current page.north east)+(-1.8cm,-1.0cm)$) {\includegraphics[height=2.8cm]{avatar.jpg}};
   \end{tikzpicture}%
-  %%%% 利用tikz来定位学校Logo，这里只在第一页显示
   \begin{tikzpicture}[remember picture, overlay] 
-    \node[anchor = north west] at ($(current page.north west)+(0.5cm,+1.0cm)$) {\includegraphics[height=6cm]{zju.png}};
+    \node[anchor = north west] at ($(current page.north west)+(0.4cm,+0.8cm)$) {\includegraphics[height=4.5cm]{zju.png}};
   \end{tikzpicture}%
-\centerline{\LARGE\bfseries{杜春龙}} 
 
+% 名字字体从LARGE改为Large
+\centerline{\Large\bfseries{杜春龙}} 
+\vspace{0.2em} % 名字下方加一点小间距
 \centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}}} 
 
-% \centerline{\normalsize{\faGithubSquare\ \href{https://github.com/maksymilan}{https://github.com/maksymilan} \quad \faRssSquare\ \href{https://maksymilan.github.io/}{https://maksymilan.github.io}}} 
-    
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}
 
-% 硕士教育背景
 \textbf{哈尔滨师范大学} \hfill \textbf{测绘工程|硕士} \hfill 2023.09 -- 至今 \titlebreak
 GPA：3.78/4.0（专业排名：前15\%）\titlebreak
 研究方向：遥感影像处理、图像处理。主要研究内容为遥感影像智能解译方法研究\titlebreak
 毕业论文：基于几何上下文与频域融合的滑坡识别深度学习模型研究
 
 \projectsep
-% 本科教育背景
 \textbf{长春工业大学} \hfill \textbf{软件工程|学士} \hfill 2019.09 -- 2023.06 \titlebreak
 GPA：3.46/4.0（专业前10\%）\titlebreak
 主修课程：程序设计基础（C语言）、高等数学、大数据处理技术（Python）、数据采集与预处理、数据分析与可视化、面向对象程序设计（Java）等
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 学术成果}
-% --- 第一个项目：期刊论文 ---
 \textbf{期刊论文} \titlebreak 
 Du, Chunlong, Shaoqun Qi, Luhe Wan, et al. (2026). "GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery" \textit{Remote Sensing} https://doi.org/10.3390/rs18040635 (SCI 2区，IF=4.1，JCRQ1)，\textbf{(第一作者)} \titlebreak
 Chen, Y., Qi, S., Wan, L., Du, C., et al. (2025). HyM3S: Integrating Multiscale Spatial–Spectral Features With Sequence Modeling for Hyperspectral Classification. \textit{IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}，(SCI 2区，IF=5.3，JCRQ1)，\textbf{(第四作者，学生第二作者)}
 
 \projectsep
-% --- 第二个项目：专利申请 ---
 \textbf{专利申请} \titlebreak
 齐少群，杜春龙.“融合几何上下文与频域多源特征的滑坡检测方法”（中国发明专利，审核中）
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研项目}
-% --- 第一个项目：黑龙江省自然科学基金项目 ---
 \textbf{黑龙江省自然科学基金项目} \hfill 核心成员 \hfill 2025.12.1 -- 2028.12.1 \titlebreak
 项目名称：“融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法” \titlebreak
 我的职责：主要负责项目的申报与立项、模型设计与优化
 
 \projectsep
-% --- 第二个项目：基于启发式算法的智能装载系统 ---
 \textbf{基于启发式算法的智能装载系统} \hfill 开发成员 \hfill 2022.08.1 -- 2022.12.30 \titlebreak
 项目描述：系统确保空运实现快速反应以及远程机动，实现大型设备运输等任务而开发，系统主要功能包括生成转场方案、转场方案管理、角色管理、装载方案、物品管理、用户管理、部门管理场地管理、舱箱管理等\titlebreak
 我的职责：负责软件前期需求分析和数据库设计工作、核心功能开发的编码
@@ -157,7 +140,7 @@ Chen, Y., Qi, S., Wan, L., Du, C., et al. (2025). HyM3S: Integrating Multiscale 
 \end{itemize}
     
 \section{\makebox[\widthof{\faInfo}][c]{\color{CVBlue}\faInfo}\ 自我评价}
-\begin{itemize}[parsep=0.5ex]
+\begin{itemize}[parsep=0.3ex]
     \item 具备图像处理与深度学习理论基础，科研态度严谨，善于独立思考与学术创新，具备完整论文撰写与项目研究能力，做事踏实耐心，拥有良好学术素养与读博深造潜力，愿意深耕科研领域
 \end{itemize}
 \end{document}
