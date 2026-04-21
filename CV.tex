@@ -1,4 +1,4 @@
-\documentclass[9pt]{article} % 字体从11pt改为10pt
+\documentclass[9pt]{article}
 
 \setlength{\parindent}{0pt}
 \usepackage{xltxtra}
@@ -45,25 +45,25 @@
     nohead
 ]{geometry}
 
-\renewcommand{\baselinestretch}{1.2} % 行间距从1.5改为1.3
+\renewcommand{\baselinestretch}{1.2}
 
 \usepackage{titlesec}
 \usepackage{enumitem}
 \setlist{noitemsep}
-\setlist[itemize]{topsep=0.15em, leftmargin=*} % 列表顶部间距缩小
+\setlist[itemize]{topsep=0.15em, leftmargin=*}
 \setlist[enumerate]{topsep=0.15em, leftmargin=*}
 
 % --- 所有自定义间距同步缩小 ---
 \newlength{\interProjectSpacing}
-\setlength{\interProjectSpacing}{0.6em} % 项目间距从0.9em改为0.6em
+\setlength{\interProjectSpacing}{0.6em}
 \newcommand{\projectsep}{\vspace{\interProjectSpacing}}
 
 \newlength{\intraProjectTitleSep}
-\setlength{\intraProjectTitleSep}{0.25em} % 标题与描述间距从0.4em改为0.25em
+\setlength{\intraProjectTitleSep}{0.25em}
 \newcommand{\titlebreak}{\\[\intraProjectTitleSep]}
 
 \newlength{\intraProjectListTopSep}
-\setlength{\intraProjectListTopSep}{0.1em} % 描述与列表间距从0.2em改为0.1em
+\setlength{\intraProjectListTopSep}{0.1em}
 
 % =======================================================================
 
@@ -73,7 +73,7 @@
 {}{0em}
 {}
 [{\color{CVBlue}\titlerule}]
-\titlespacing*{\section}{0cm}{*1.0}{*0.7} % 章节前后间距从*1.6/*1.2改为*1.0/*0.7
+\titlespacing*{\section}{0cm}{*1.0}{*0.7}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -88,39 +88,39 @@
 
 % 名字字体从LARGE改为Large
 \centerline{\Large\bfseries{杜春龙}} 
-\vspace{0.2em} % 名字下方加一点小间
+\vspace{0.2em}
 \centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}}} 
 
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}
 
 \textbf{哈尔滨师范大学} \hfill \textbf{测绘工程(硕士)} \hfill 2023.09 -- 至今 \titlebreak
-\item \textbf{GPA：}3.78/4.0（专业排名：前15\%）\titlebreak
-\item \textbf{研究方向：}遥感影像处理、图像处理。主要研究内容为遥感影像智能解译方法研究\titlebreak
-\item \textbf{毕业论文：}基于几何上下文与频域融合的滑坡识别深度学习模型研究
+\textbf{GPA：}3.78/4.0（专业排名：前15\%）\titlebreak
+\textbf{研究方向：}遥感影像处理、图像处理。主要研究内容为遥感影像智能解译方法研究\titlebreak
+\textbf{毕业论文：}基于几何上下文与频域融合的滑坡识别深度学习模型研究
 
 \projectsep
-\textbf{长春工业大学} \hfill \textbf{ 软件工程(学士)} \hfill 2019.09 -- 2023.06 \titlebreak
-\item \textbf{GPA：}3.46/4.0（专业前10\%）\titlebreak
-\item \textbf{主修课程：}程序设计基础（C语言）、高等数学、大数据处理技术（Python）、数据采集与预处理、数据分析与可视化、面向对象程序设计（Java）等
+\textbf{长春工业大学} \hfill \textbf{软件工程(学士)} \hfill 2019.09 -- 2023.06 \titlebreak
+\textbf{GPA：}3.46/4.0（专业前10\%）\titlebreak
+\textbf{主修课程：}程序设计基础（C语言）、高等数学、大数据处理技术（Python）、数据采集与预处理、数据分析与可视化、面向对象程序设计（Java）等
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 学术成果}
 \textbf{期刊论文：} \titlebreak 
-\item Du, Chunlong, Shaoqun Qi, Luhe Wan, et al. (2026). GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery \textit{Remote Sensing} https://doi.org/10.3390/rs18040635 (SCI 2区，IF=4.1)，(第一作者) \titlebreak
-\item Chen, Y., Qi, S., Wan, L., Du, C., et al. (2025). HyM3S: Integrating Multiscale Spatial–Spectral Features With Sequence Modeling for Hyperspectral Classification. \textit{IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}，(SCI 2区，IF=5.3)，(第四作者，学生第二作者)
+Du, Chunlong, Shaoqun Qi, Luhe Wan, et al. (2026). GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery \textit{Remote Sensing} https://doi.org/10.3390/rs18040635 (SCI 2区，IF=4.1)，(第一作者) \titlebreak
+Chen, Y., Qi, S., Wan, L., Du, C., et al. (2025). HyM3S: Integrating Multiscale Spatial–Spectral Features With Sequence Modeling for Hyperspectral Classification. \textit{IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}，(SCI 2区，IF=5.3)，(第四作者，学生第二作者)
 
 \projectsep
 \textbf{专利申请：} \titlebreak
-\item 齐少群，杜春龙.“融合几何上下文与频域多源特征的滑坡检测方法”（中国发明专利，审核中）
+齐少群，杜春龙.“融合几何上下文与频域多源特征的滑坡检测方法”（中国发明专利，审核中）
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研项目}
 \textbf{黑龙江省自然科学基金项目} \hfill 核心成员 \hfill 2025.12.1 -- 2028.12.1 \titlebreak
-\item \textbf{项目名称：}“融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法” \titlebreak
-\item \textbf{我的职责：}核心参与项目申报与立项全流程，负责遥感影像解译深度学习模型的架构设计、算法优化与实验验证设计
+\textbf{项目名称：}“融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法” \titlebreak
+\textbf{我的职责：}核心参与项目申报与立项全流程，负责遥感影像解译深度学习模型的架构设计、算法优化与实验验证设计
 
 \projectsep
 \textbf{基于启发式算法的智能装载系统} \hfill 开发成员 \hfill 2022.08.1 -- 2022.12.30 \titlebreak
-\item \textbf{项目描述：}系统确保空运实现快速反应以及远程机动，实现大型设备运输等任务而开发，系统主要功能包括生成转场方案、转场方案管理、角色管理、装载方案、物品管理、用户管理、部门管理场地管理、舱箱管理等\titlebreak
-\item \textbf{我的职责：}负责项目前期需求调研与分析，完成核心数据库表结构设计与性能优化，负责系统核心功能模块的编码开发与联调测试
+\textbf{项目描述：}系统确保空运实现快速反应以及远程机动，实现大型设备运输等任务而开发，系统主要功能包括生成转场方案、转场方案管理、角色管理、装载方案、物品管理、用户管理、部门管理场地管理、舱箱管理等\titlebreak
+\textbf{我的职责：}负责项目前期需求调研与分析，完成核心数据库表结构设计与性能优化，负责系统核心功能模块的编码开发与联调测试
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研技能}
 
