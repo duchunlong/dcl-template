@@ -1,3 +1,21 @@
+编译错误的原因在于**联系方式那一行丢失了闭合的大括号 `}`**。
+
+在原代码的第 75 行左右：
+```latex
+% 错误代码：
+\centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}
+```
+你打开了 `\centerline{` 和 `\normalsize{`，但是末尾没有把这两个大括号闭合。这会导致 LaTeX 把后面的所有内容都当成这一行的输入，从而引发致命的编译错误（通常报错为 `Runaway argument?`）。
+
+**修正方法很简单，在行尾加上 `}}` 即可：**
+```latex
+% 正确代码：
+\centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}}}
+```
+
+以下是为你修复好大括号的**完整可编译代码**：
+
+```latex
 \documentclass[9pt]{article}
 
 \setlength{\parindent}{0pt}
@@ -84,7 +102,8 @@
 % 名字与联系方式
 \centerline{\Large\bfseries{杜春龙}} 
 \vspace{0.2em}
-\centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}
+% 【修复：这里补齐了末尾的两个大括号 }} 】
+\centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}}}
 \vspace{0.4em}
 % 博导视角的科研综述
 \centerline{\textbf{科研综述：}累计发表/参与 SCI 论文 2 篇（含一作 SCI 2区 1 篇），申请发明专利 1 项}
@@ -191,3 +210,4 @@
 \end{itemize}
 
 \end{document}
+```
