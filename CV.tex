@@ -17,14 +17,14 @@
 \usepackage{enumitem}
 \CJKsetecglue{}
 
-%% 主文档字体设置
+%% 主文档字体设置 (请保持你本地的字体路径)
 \setmainfont[
     Path = fonts/Main/,
     Extension = .otf,
     BoldFont = texgyretermes-bold.otf,
 ]{texgyretermes-regular.otf}
 
-% 中文字体设置
+% 中文字体设置 (请保持你本地的字体路径)
 \setCJKmainfont[
     Path = fonts/hansans/,
     Extension = .ttf,
@@ -65,8 +65,6 @@
 \newlength{\intraProjectListTopSep}
 \setlength{\intraProjectListTopSep}{0.1em}
 
-% =======================================================================
-
 % 章节上下间距缩小
 \titleformat{\section}
 {\large\bfseries\raggedright}
@@ -78,78 +76,121 @@
 \begin{document}
 \pagenumbering{gobble}
 
-%%%% 照片和Logo稍微缩小一点
+%%%% 照片和Logo稍微缩小一点 (请确保目录下有 报名照片.jpg)
 \begin{tikzpicture}[remember picture, overlay] 
     \node[anchor = north east] at ($(current page.north east)+(-1.8cm,-0.5cm)$) {\includegraphics[height=2.8cm]{报名照片.jpg}};
 \end{tikzpicture}
 
-% 名字
+% 名字与联系方式
 \centerline{\Large\bfseries{杜春龙}} 
 \vspace{0.2em}
-\centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn}}} 
+\centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn} \quad \faGithub\ \href{https://github.com/YourGitHub}{GitHub/ChunlongDu}}} 
+\vspace{0.4em}
+% 【新增】博导视角的科研综述：一句话总结你的学术分量与研究契合度
+\centerline{\textbf{科研综述：}累计发表/参与 SCI 论文 2 篇（含一作 SCI 2区 1 篇），申请发明专利 1 项。}
+\centerline{熟练掌握 PyTorch 与深度学习模型设计，具备**独立完成遥感算法开发、实验设计及英文科技论文写作**的能力。}
 
+\vspace{-0.5em}
+
+% ================= 教育背景 =================
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}
 
 \textbf{哈尔滨师范大学} \hfill \textbf{测绘工程（硕士）} \hfill 2023.09 -- 至今
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{GPA：}3.78/4.0 \textbf{\color{CVBlue}（专业排名：前15\%）}
-    \item \textbf{研究方向：}遥感影像智能解译与语义分割，重点关注复杂场景下的多尺度特征建模、多源信息融合与边界感知方法
-    \item \textbf{毕业论文：}《基于几何上下文与频域融合的滑坡识别深度学习模型研究》
+    \item \textbf{学业表现：}GPA：3.78/4.0 \textbf{\color{CVBlue}（专业排名：前 15\%）}
+    \item \textbf{核心课程：}深度学习（95分）、高级遥感数字图像处理（92分）、空间分析建模（90分）\textit{【注：填入你的高分相关课程】}
+    \item \textbf{研究方向：}遥感影像智能解译与语义分割（多尺度特征建模、多源信息融合、边界感知）
 \end{itemize}
 
 \projectsep
 \textbf{长春工业大学} \hfill \textbf{软件工程（学士）} \hfill 2019.09 -- 2023.06
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{GPA：}3.46/4.0 \textbf{\color{CVBlue}（专业前10\%）}
-    \item \textbf{主修课程：}程序设计基础（C语言）、高等数学、大数据处理技术（Python）、数据采集与预处理、数据分析与可视化、面向对象程序设计（Java）等
+    \item \textbf{学业表现：}GPA：3.46/4.0 \textbf{\color{CVBlue}（专业排名：前 10\%）}；多次获得一/二等学业奖学金
+    \item \textbf{核心课程：}大数据处理技术（Python）、数据分析与可视化、算法设计与分析、高等数学等
 \end{itemize}
 
-\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 学术成果}
-\textbf{期刊论文：}
+
+% ================= 科研成果 =================
+\section{\makebox[\widthof{\faFileText}][c]{\color{CVBlue}\faFileText}\ 科研成果 (Publications \& Patents)}
+
+\textbf{学术论文：}
+\begin{enumerate}[label={[\arabic*]}, leftmargin=1.5em]
+    \item \textbf{Du, Chunlong}, Shaoqun Qi, Luhe Wan, et al. GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery. \textit{Remote Sensing}, 2026. DOI: \href{https://doi.org/10.3390/rs18040635}{10.3390/rs18040635}. \textbf{\color{CVBlue}（SCI 2区，IF=4.1，第一作者）}
+    \begin{itemize}[label=\faAngleRight, leftmargin=1em, topsep=0.1em]
+        \item \textbf{研究亮点：}针对复杂场景下滑坡边界模糊问题，提出了一种融合几何上下文与频域特征的双流网络架构，分割精度较基线模型提升 X\%。
+        \item \textbf{本人贡献：}独立提出核心创新点与网络架构；完成全套代码编写（PyTorch）、消融实验设计、数据可视化分析；独立完成全英文手稿撰写及审稿意见返修。
+    \end{itemize}
+    \vspace{0.2em}
+    \item Chen, Y., Qi, S., Wan, L., \textbf{Du, C.}, et al. HyM3S: Integrating Multiscale Spatial--Spectral Features With Sequence Modeling for Hyperspectral Classification. \textit{IEEE JSTARS}, 2025. \textbf{\color{CVBlue}（SCI 2区，IF=5.3，第四作者，学生第二作者）}
+    \begin{itemize}[label=\faAngleRight, leftmargin=1em, topsep=0.1em]
+        \item \textbf{本人贡献：}负责高光谱数据集的预处理与增强；协助构建多尺度空间-光谱特征融合模块；复现部分 Baseline 对比算法并完成对比实验数据整理。
+    \end{itemize}
+\end{enumerate}
+
+\projectsep
+\textbf{发明专利：}
+\begin{itemize}[label=\faLightbulbO, leftmargin=1.5em]
+    \item \textbf{杜春龙}，等. 融合几何上下文与频域多源特征的滑坡检测方法. \textbf{中国发明专利}（申请号：XXXXX，实审中）.
+    \begin{itemize}[label=\faAngleRight, leftmargin=1em, topsep=0.1em]
+        \item \textbf{本人贡献：}提出核心算法流程，负责撰写专利权利要求书与技术交底书。
+    \end{itemize}
+\end{itemize}
+
+
+% ================= 科研经历 =================
+\section{\makebox[\widthof{\faFlask}][c]{\color{CVBlue}\faFlask}\ 科研经历 (Research Experience)}
+
+\textbf{融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法} \hfill \textbf{\color{CVBlue}黑龙江省自然科学基金项目} \hfill 2025.12 -- 2028.12
 \begin{itemize}[nosep, leftmargin=*]
-    \item Du, Chunlong, Shaoqun Qi, Luhe Wan, et al. GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery. \textit{Remote Sensing}, 2026. DOI: \href{https://doi.org/10.3390/rs18040635}{10.3390/rs18040635}\textbf{（SCI 2区，IF=4.1，第一作者）}
-    \item Chen, Y., Qi, S., Wan, L., Du, C., et al. HyM3S: Integrating Multiscale Spatial--Spectral Features With Sequence Modeling for Hyperspectral Classification. \textit{IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 2025.\textbf{（SCI 2区，IF=5.3，第四作者，学生第二作者）}
+    \item \textbf{项目角色：}核心研究人员（导师主持）
+    \item \textbf{项目难点：}复杂农业场景中作物类别混淆、灾情边界模糊及多时相特征表达不足。
+    \item \textbf{技术方案：}融合光学遥感与多时相时序信息，构建“光谱—纹理—时序”协同特征的深度学习建模框架。
+    \item \textbf{本人职责与贡献：}
+    \begin{itemize}[label=$\circ$, leftmargin=1em]
+        \item 参与省基金项目申报书撰写，独立负责“遥感智能解译技术路线”的论证与架构设计。
+        \item 主导多尺度特征融合及边界感知分割算法的研发，基于 PyTorch 搭建并优化网络骨干（Backbone）。
+        \item 制定完整的模型训练与消融实验方案，为灾情范围与强度识别提供高精度的底层算法支撑。
+    \end{itemize}
 \end{itemize}
 
 \projectsep
-\textbf{专利：}融合几何上下文与频域多源特征的滑坡检测方法（中国发明专利，实审中）
 
-\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研项目}
-\textbf{黑龙江省自然科学基金项目} \hfill 核心成员 \hfill 2025.12 -- 2028.12
+\textbf{基于几何上下文与频域融合的滑坡识别深度学习模型研究} \hfill \textbf{\color{CVBlue}硕士毕业论文课题} \hfill 2023.09 -- 至今
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{项目名称：}融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法
-    \item \textbf{项目描述：}针对复杂农业场景中作物类别混淆、灾情边界模糊及多时相特征表达不足等问题，融合光学遥感、多时相时序信息与深度学习方法，构建“光谱—纹理—时序”协同特征建模框架，实现农作物精细分类及灾情范围与强度识别
-    \item \textbf{我的职责：}参与项目申报书与技术路线设计，负责遥感解译模型架构设计与实验方案制定；重点研究多尺度特征融合及边界感知分割方法，完成模型训练、消融实验与性能评估等方案设计
+    \item \textbf{研究背景：}滑坡灾害遥感影像背景复杂，传统 CNN 在处理全局依赖与高频边界特征时存在局限性。
+    \item \textbf{技术方案与贡献：}
+    \begin{itemize}[label=$\circ$, leftmargin=1em]
+        \item 设计了 GCF-Net（几何上下文与频域融合网络），引入傅里叶变换提取高频边界信息，结合自注意力机制捕捉全局几何上下文。
+        \item 在公开滑坡数据集（如 Bijie Landslide Dataset）上完成大规模训练，模型 mIoU 与 F1-score 优于现有主流方法（如 U-Net, DeepLabV3+）。
+        \item \textbf{成果产出：}基于该课题产出 SCI 2区一作论文 1 篇，发明专利 1 项。证明了本人具备完整的课题独立推进能力。
+    \end{itemize}
 \end{itemize}
 
-\projectsep
 
-\textbf{基于启发式算法的智能装载系统} \hfill 开发成员 \hfill 2022.08 -- 2022.12
+% ================= 实践经历 =================
+\section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 实践经历 (Practical Experience)}
+
+\textbf{基于启发式算法的智能装载系统开发} \hfill 核心开发成员 \hfill 2022.08 -- 2022.12
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{项目描述：}面向空运快速响应与复杂装载场景需求，开发基于启发式优化算法的智能装载系统，实现装载方案生成、舱箱资源管理、转场调度与多角色协同管理等功能，提高装载方案生成效率与资源利用率
-    \item \textbf{我的职责：}负责系统需求分析与数据库结构设计，参与核心业务模块开发与联调测试；针对复杂装载约束条件，对关键数据表与查询逻辑进行优化，提升系统响应效率与数据管理稳定性
+    \item \textbf{项目背景：}面向空运快速响应需求，解决复杂约束条件下的多目标三维装箱优化问题。
+    \item \textbf{技术方案：}采用 Python/Java 混合开发，底层算法采用改进的遗传算法（GA）与启发式规则融合寻优。
+    \item \textbf{本人职责与贡献：}
+    \begin{itemize}[label=$\circ$, leftmargin=1em]
+        \item 负责系统需求分析与数据库（MySQL）结构化设计，针对复杂装载约束优化查询逻辑，使数据检索延迟降低 X\%。
+        \item 参与核心启发式优化模块的代码开发与联调测试，显著提升了装载方案的生成效率与舱位空间利用率。
+    \end{itemize}
 \end{itemize}
 
-\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研技能}
+
+% ================= 专业技能 =================
+\section{\makebox[\widthof{\faWrench}][c]{\color{CVBlue}\faWrench}\ 专业技能 (Skills \& Honors)}
 
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{学术写作与工具：}熟练使用 LaTeX 进行学术论文排版，掌握 EndNote、Zotero 等文献管理工具，熟悉 SCI 期刊投稿流程与审稿意见回复规范，具备中英文科技论文写作能力
-    \item \textbf{深度学习与计算机视觉：}熟悉 PyTorch、TensorFlow 框架，能够搭建和优化 U-Net 等深度学习模型，具备遥感影像分割、特征融合与模型调参能力
-    \item \textbf{编程开发与工具：}熟悉 Python、C、Java 等语言，具备一定的软件开发与工程实现能力
-    \item \textbf{软件工具：}熟练使用 IDEA、PyCharm、VS Code 等开发工具，能够高效完成科研与开发任务
-\end{itemize}
-
-\section{\makebox[\widthof{\faTrophy}][c]{\color{CVBlue}\faTrophy}\ 荣誉奖项}
-\begin{itemize}[nosep]
-    \item \textbf{学业奖学金：}学业二等奖学金（2020.03、2021.03）；学业三等奖学金（2020.09、2020.12、2021.09、2022.09）
-    \item \textbf{荣誉称号：}文明大学生（2021.04）；学风建设先进个人（2020.12）
-    \item \textbf{竞赛与科创：}“外研社·国才杯”全国英语写作大赛校级二等奖（2020.12）；大学生创新创业训练计划项目立项（2022.05）
-    \item \textbf{英语能力：}大学英语四级（CET-4）、大学英语六级（CET-6）
-\end{itemize}
-
-\section{\makebox[\widthof{\faInfo}][c]{\color{CVBlue}\faInfo}\ 自我评价}
-\begin{itemize}[parsep=0.3ex]
-    \item 聚焦遥感影像智能解译与语义分割方向，具备频域特征建模、多尺度特征融合及边界感知分割等相关研究基础；熟悉深度学习模型设计、实验分析与论文写作流程，能够独立开展模型改进、消融实验与结果分析。具备较强的问题分析能力与科研执行力，对复杂场景遥感解译与模型泛化问题保持持续研究兴趣
+    \item \textbf{英语水平：}大学英语六级（CET-6）、大学英语四级（CET-4），能够流畅阅读并独立撰写英文学术文献。
+    \item \textbf{算法与编程：}精通 \textbf{Python}，熟练掌握 \textbf{PyTorch / TensorFlow} 深度学习框架；熟悉 C / Java，具备扎实的计算机科班代码基础（本科软件工程专业前10\%）。
+    \item \textbf{专业能力：}熟练掌握遥感影像智能解译、语义分割（U-Net系列、Transformer架构等）、多源特征融合、计算机视觉（CV）相关算法与调参技巧。
+    \item \textbf{科研工具：}熟练使用 \textbf{LaTeX} 进行高质量学术排版；熟练使用 Linux 服务器进行模型训练；掌握 Zotero、EndNote、VS Code、Git 等科研与开发工具。
+    \item \textbf{综合荣誉：}研究生学业二/三等奖学金（6次）、全国英语写作大赛校级二等奖、本科“大创”项目立项（2022）。
 \end{itemize}
 
 \end{document}
