@@ -1,3 +1,6 @@
+这里是修改后的完整 LaTeX 代码，已经去掉了所有句子末尾的中文句号（对于段落中间的句号，为了保证句子的通顺，替换为了逗号），使简历的排版风格更加简洁统一：
+
+```latex
 \documentclass[9pt]{article}
 
 \setlength{\parindent}{0pt}
@@ -87,8 +90,8 @@
 \centerline{\normalsize{\faPhone\ 136-3430-2571 \quad \faEnvelopeO\ \href{mailto:chunlongdu@stu.hrbnu.edu.cn}{chunlongdu@stu.hrbnu.edu.cn} \quad \faGithub\ \href{https://github.com/YourGitHub}{GitHub/ChunlongDu}}} 
 \vspace{0.4em}
 % 博导视角的科研综述
-\centerline{\textbf{科研综述：}累计发表/参与 SCI 论文 2 篇（含一作 SCI 2区 1 篇），申请发明专利 1 项。}
-\centerline{熟练掌握深度学习模型设计，具备**独立完成遥感算法开发、英文科技论文写作及全栈工程落地**的能力。}
+\centerline{\textbf{科研综述：}累计发表/参与 SCI 论文 2 篇（含一作 SCI 2区 1 篇），申请发明专利 1 项}
+\centerline{熟练掌握深度学习模型设计，具备**独立完成遥感算法开发、英文科技论文写作及全栈工程落地**的能力}
 
 \vspace{-0.5em}
 
@@ -117,22 +120,22 @@
 \begin{enumerate}[label={[\arabic*]}, leftmargin=1.5em]
     \item \textbf{Du, Chunlong}, Shaoqun Qi, Luhe Wan, et al. GCF-Net: A Geometric Context and Frequency Domain Fusion Network for Landslide Segmentation in Remote Sensing Imagery. \textit{Remote Sensing}, 2026. DOI: \href{https://doi.org/10.3390/rs18040635}{10.3390/rs18040635}. \textbf{\color{CVBlue}（SCI 2区，IF=4.1，第一作者）}
     \begin{itemize}[label=\faAngleRight, leftmargin=1em, topsep=0.1em]
-        \item \textbf{研究亮点：}针对复杂场景下滑坡边界模糊问题，提出了一种融合几何上下文与频域特征的双流网络架构，分割精度较基线模型提升 X\%。
-        \item \textbf{本人贡献：}独立提出核心创新点与网络架构；完成全套代码编写（PyTorch）、消融实验设计；独立完成全英文手稿撰写及返修。
+        \item \textbf{研究亮点：}针对复杂场景下滑坡边界模糊问题，提出了一种融合几何上下文与频域特征的双流网络架构，分割精度较基线模型提升 X\%
+        \item \textbf{本人贡献：}独立提出核心创新点与网络架构；完成全套代码编写（PyTorch）、消融实验设计；独立完成全英文手稿撰写及返修
     \end{itemize}
     \vspace{0.2em}
     \item Chen, Y., Qi, S., Wan, L., \textbf{Du, C.}, et al. HyM3S: Integrating Multiscale Spatial--Spectral Features With Sequence Modeling for Hyperspectral Classification. \textit{IEEE JSTARS}, 2025. \textbf{\color{CVBlue}（SCI 2区，IF=5.3，第四作者，学生第二作者）}
     \begin{itemize}[label=\faAngleRight, leftmargin=1em, topsep=0.1em]
-        \item \textbf{本人贡献：}负责高光谱数据集预处理与增强；协助构建多尺度空间-光谱特征融合模块；复现对比算法并完成实验数据整理。
+        \item \textbf{本人贡献：}负责高光谱数据集预处理与增强；协助构建多尺度空间-光谱特征融合模块；复现对比算法并完成实验数据整理
     \end{itemize}
 \end{enumerate}
 
 \projectsep
 \textbf{发明专利：}
 \begin{itemize}[label=\faLightbulbO, leftmargin=1.5em]
-    \item \textbf{杜春龙}，等. 融合几何上下文与频域多源特征的滑坡检测方法. \textbf{中国发明专利}（申请号：XXXXX，实审中）.
+    \item \textbf{杜春龙}，等. 融合几何上下文与频域多源特征的滑坡检测方法. \textbf{中国发明专利}（申请号：XXXXX，实审中）
     \begin{itemize}[label=\faAngleRight, leftmargin=1em, topsep=0.1em]
-        \item \textbf{本人贡献：}提出核心算法流程，负责撰写专利权利要求书与技术交底书。
+        \item \textbf{本人贡献：}提出核心算法流程，负责撰写专利权利要求书与技术交底书
     \end{itemize}
 \end{itemize}
 
@@ -143,24 +146,24 @@
 \textbf{融合多源多时相遥感与深度学习的农作物精细分类与灾情识别方法} \hfill \textbf{\color{CVBlue}黑龙江省自然科学基金项目} \hfill 2025.12 -- 2028.12
 \begin{itemize}[nosep, leftmargin=*]
     \item \textbf{项目角色：}核心研究人员（导师主持）
-    \item \textbf{技术方案：}针对复杂农业场景中作物类别混淆及多时相特征表达不足问题，融合光学遥感与多时相时序信息，构建“光谱—纹理—时序”协同特征的深度学习框架。
-    \item \textbf{本人职责：}参与项目申报书撰写；主导多尺度特征融合及边界感知分割算法研发，基于 PyTorch 搭建网络骨干并完成消融实验。
+    \item \textbf{技术方案：}针对复杂农业场景中作物类别混淆及多时相特征表达不足问题，融合光学遥感与多时相时序信息，构建“光谱—纹理—时序”协同特征的深度学习框架
+    \item \textbf{本人职责：}参与项目申报书撰写；主导多尺度特征融合及边界感知分割算法研发，基于 PyTorch 搭建网络骨干并完成消融实验
 \end{itemize}
 
 \projectsep
 
 \textbf{基于几何上下文与频域融合的滑坡识别深度学习模型研究} \hfill \textbf{\color{CVBlue}硕士毕业论文课题} \hfill 2023.09 -- 至今
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{技术方案：}设计了 GCF-Net，引入傅里叶变换提取高频边界信息，结合自注意力机制捕捉全局几何上下文。
-    \item \textbf{科研产出：}在公开数据集完成大规模训练，性能优于主流 CNN 及 Transformer 模型，产出 SCI 一作论文 1 篇及专利 1 项，证明具备完整课题推进能力。
+    \item \textbf{技术方案：}设计了 GCF-Net，引入傅里叶变换提取高频边界信息，结合自注意力机制捕捉全局几何上下文
+    \item \textbf{科研产出：}在公开数据集完成大规模训练，性能优于主流 CNN 及 Transformer 模型，产出 SCI 一作论文 1 篇及专利 1 项，证明具备完整课题推进能力
 \end{itemize}
 
 \projectsep
 
 \textbf{基于启发式算法的智能装载系统研究与开发} \hfill 算法与核心开发成员 \hfill 2022.08 -- 2022.12
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{技术方案：}面向空运快速响应需求，解决复杂约束条件下的多目标三维装箱优化问题。底层算法采用改进的遗传算法（GA）与启发式规则融合寻优。
-    \item \textbf{本人职责：}负责核心启发式算法逻辑设计与实现；优化复杂装载约束条件下的查询逻辑与计算架构，显著提升装载方案生成效率。
+    \item \textbf{技术方案：}面向空运快速响应需求，解决复杂约束条件下的多目标三维装箱优化问题，底层算法采用改进的遗传算法（GA）与启发式规则融合寻优
+    \item \textbf{本人职责：}负责核心启发式算法逻辑设计与实现；优化复杂装载约束条件下的查询逻辑与计算架构，显著提升装载方案生成效率
 \end{itemize}
 
 
@@ -170,14 +173,14 @@
 \textbf{自然资源部第二大地测量队（卫星导航定位服务中心）} \hfill \textbf{全栈软件开发实习生} \hfill 2024.10 -- 2025.04
 \begin{itemize}[nosep, leftmargin=*]
     \item \textbf{项目名称：}北斗高精度位置服务平台
-    \item \textbf{业务背景：}开发满足多级用户体系的北斗账号服务系统，涵盖资质认证（个人/企业/分中心）、订单审核管理、价格体系维护及账号智能分发等全链路功能。
+    \item \textbf{业务背景：}开发满足多级用户体系的北斗账号服务系统，涵盖资质认证（个人/企业/分中心）、订单审核管理、价格体系维护及账号智能分发等全链路功能
     \item \textbf{技术栈：}Spring Boot, Spring MVC, MyBatis, MySQL, Java, HTML5, Vue, Nginx.
     \item \textbf{核心职责与贡献：}
     \begin{itemize}[label=$\circ$, leftmargin=1em]
-        \item \textbf{架构与数据库设计：}负责需求拆解，完成业务逻辑抽象与 MySQL 数据库表结构建模；从零搭建前后端分离基础框架。
-        \item \textbf{全栈业务开发：}独立完成平台前后端核心接口编码，实现复杂的多级资质认证与订单审批逻辑，并完成单元测试。
-        \item \textbf{环境部署与运维：}负责远程 Linux 服务器环境配置，利用 Nginx 实现反向代理与负载均衡，保障系统平稳上线与集成测试。
-        \item \textbf{技术文档与沉淀：}独立撰写《系统设计说明书》与《用户使用手册》；编制新手开发指南及培训资料，助力团队知识传承。
+        \item \textbf{架构与数据库设计：}负责需求拆解，完成业务逻辑抽象与 MySQL 数据库表结构建模；从零搭建前后端分离基础框架
+        \item \textbf{全栈业务开发：}独立完成平台前后端核心接口编码，实现复杂的多级资质认证与订单审批逻辑，并完成单元测试
+        \item \textbf{环境部署与运维：}负责远程 Linux 服务器环境配置，利用 Nginx 实现反向代理与负载均衡，保障系统平稳上线与集成测试
+        \item \textbf{技术文档与沉淀：}独立撰写《系统设计说明书》与《用户使用手册》；编制新手开发指南及培训资料，助力团队知识传承
     \end{itemize}
 \end{itemize}
 
@@ -186,11 +189,12 @@
 \section{\makebox[\widthof{\faWrench}][c]{\color{CVBlue}\faWrench}\ 专业技能 (Skills \& Honors)}
 
 \begin{itemize}[nosep, leftmargin=*]
-    \item \textbf{英语水平：}大学英语六级（CET-6）、四级（CET-4），能够流畅阅读并独立撰写英文学术文献。
-    \item \textbf{算法与数据科学：}精通 \textbf{Python}，熟练掌握 \textbf{PyTorch} 等深度学习框架；扎实掌握遥感影像解译、特征融合及 CV 算法调优。
-    \item \textbf{软件工程开发：}熟练使用 \textbf{Java, C}；熟悉 Spring Boot、Vue 等 Web 框架及 MySQL 数据库，具备完整的商业级软件全栈开发与部署上线能力。
-    \item \textbf{科研工具：}熟练使用 \textbf{LaTeX} 进行排版；熟练操作 Linux 服务器；掌握 Git、Zotero、VS Code、IDEA 等开发与科研工具。
-    \item \textbf{综合荣誉：}研究生学业二/三等奖学金（6次）、全国英语写作大赛校级二等奖、本科“大创”项目立项（2022）。
+    \item \textbf{英语水平：}大学英语六级（CET-6）、四级（CET-4），能够流畅阅读并独立撰写英文学术文献
+    \item \textbf{算法与数据科学：}精通 \textbf{Python}，熟练掌握 \textbf{PyTorch} 等深度学习框架；扎实掌握遥感影像解译、特征融合及 CV 算法调优
+    \item \textbf{软件工程开发：}熟练使用 \textbf{Java, C}；熟悉 Spring Boot、Vue 等 Web 框架及 MySQL 数据库，具备完整的商业级软件全栈开发与部署上线能力
+    \item \textbf{科研工具：}熟练使用 \textbf{LaTeX} 进行排版；熟练操作 Linux 服务器；掌握 Git、Zotero、VS Code、IDEA 等开发与科研工具
+    \item \textbf{综合荣誉：}研究生学业二/三等奖学金（6次）、全国英语写作大赛校级二等奖、本科“大创”项目立项（2022）
 \end{itemize}
 
 \end{document}
+```
